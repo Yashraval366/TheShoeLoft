@@ -1,0 +1,38 @@
+.cart-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.cart-table {
+    width: 100%;
+    height: 350px;
+    border-collapse: collapse;
+}
+
+.cart-table th,
+.cart-table td {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.cart-table img {
+    width: 105px;
+    height: 85px;
+    object-fit: cover;
+}
+
+.cart-table button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.cart-table button:hover {
+    color: red;
+}
+
+.item-color {
+    color: gray;
+    font-size: 12px;
+}

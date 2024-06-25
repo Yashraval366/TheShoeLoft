@@ -4,39 +4,58 @@ import Home from './Home';
 import Cart from './Cart';
 import { Routes, Route } from 'react-router-dom';
 
-
 function App() {
   const [cartItems, setCartItems] = useState([]);
+  const [count, setCount] = useState(0);
 
   const addToCart = (product) => {
     const existingProductIndex = cartItems.findIndex((item) => item.id === product.id);
     if (existingProductIndex !== -1) {
-      // If the product is already in the cart, increase its quantity
       const updatedCartItems = [...cartItems];
       updatedCartItems[existingProductIndex].quantity += 1;
       setCartItems(updatedCartItems);
     } else {
-      // If the product is not in the cart, add it with a quantity of 1
       setCartItems([...cartItems, { ...product, quantity: 1 }]);
     }
   };
 
-  // Sample products, count, handleLeft, and handleRight for the slider
-  const products = [
-    { id: 1, imgSrc: './images/blazer.png', title: 'Product 1', price: '$10' },
-    { id: 2, imgSrc: './images/blazer2.png', title: 'Product 2', price: '$20' },
-    { id: 3, imgSrc: './images/crater.png', title: 'Product 3', price: '$30' },
-    { id: 4, imgSrc: './images/crater2.png', title: 'Product 4', price: '$40' },
-    { id: 5, imgSrc: './images/hippie.png', title: 'Product 5', price: '$30' },
-    { id: 6, imgSrc: './images/hippie2.png', title: 'Product 6', price: '$20' }
-  ];
-  const [count, setCount] = useState(0);
+  const incrementQuantity = (id) => {
+    const updatedCartItems = cartItems.map((item) =>
+      item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+    );
+    setCartItems(updatedCartItems);
+  };
+
+  const decrementQuantity = (id) => {
+    const updatedCartItems = cartItems.map((item) =>
+      item.id === id && item.quantity > 1 ? { ...item, quantity: item.quantity - 1 } : item
+    );
+    setCartItems(updatedCartItems);
+  };
+
+  const removeFromCart = (id) => {
+    const updatedCartItems = cartItems.filter((item) => item.id !== id);
+    setCartItems(updatedCartItems);
+  };
+
   const handleLeft = () => {
-    setCount((prevCount) => (prevCount === 0 ? products.length - 1 : prevCount - 1));
+    setCount((prevCount) => (prevCount > 0 ? prevCount - 1 : prevCount));
   };
+
   const handleRight = () => {
-    setCount((prevCount) => (prevCount === products.length - 1 ? 0 : prevCount + 1));
+    setCount((prevCount) => (prevCount < products.length / 3 - 1 ? prevCount + 1 : prevCount));
   };
+
+  const products = [
+    { id: 1, imgSrc: './images/blazer.png', title: 'blazer', color: 'White', price: 5000 },
+    { id: 2, imgSrc: './images/blazer2.png', title: 'blazer2', color: 'White', price: 5000 },
+    { id: 3, imgSrc: './images/crater.png', title: 'crater', color: 'Brown', price: 5000 },
+    { id: 4, imgSrc: './images/crater2.png', title: 'crater2', color: 'Brown', price: 5000 },
+    { id: 5, imgSrc: './images/hippie.png', title: 'hippie', color: 'Brown', price: 5000 },
+    { id: 6, imgSrc: './images/hippie2.png', title: 'hippie2', color: 'Brown', price: 5000 },
+    { id: 7, imgSrc: './images/air.png', title: 'air', color: 'Brown', price: 5000 },
+    { id: 8, imgSrc: './images/air2.png', title: 'air2', color: 'Brown', price: 5000 },
+  ];
 
   return (
     <>
@@ -45,11 +64,20 @@ function App() {
           path="/"
           element={<Home products={products} count={count} handleLeft={handleLeft} handleRight={handleRight} addToCart={addToCart} />}
         />
-        <Route path="/cart" element={<Cart cartItems={cartItems} />} />
+        <Route
+          path="/cart"
+          element={
+            <Cart
+              cartItems={cartItems}
+              incrementQuantity={incrementQuantity}
+              decrementQuantity={decrementQuantity}
+              removeFromCart={removeFromCart}
+            />
+          }
+        />
       </Routes>
     </>
   );
 }
 
 export default App;
-

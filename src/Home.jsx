@@ -19,7 +19,8 @@ function ProductSlider({ products, count, handleLeft, handleRight, addToCart }) 
             <div className='ProductInfo'>
               <div className='ProductTitle'>{product.title}</div>
               <div className='ProductPrice'>{product.price}</div>
-              <button onClick={() => addToCart(product)}>Add to Cart</button>
+              <button className='buybutton'>Buy</button>
+              <button  className='addcart' onClick={() => addToCart(product)}>Add to Cart</button>
             </div>
           </div>
         ))}
@@ -78,7 +79,7 @@ function Home({ products, count, handleLeft, handleRight, addToCart }) {
       <div className='title1'><h2>New Items!</h2></div>
       <ProductSlider products={products} count={count} handleLeft={handleLeft} handleRight={handleRight} addToCart={addToCart} />
 
-      <div className='title1'><h2>Trending!</h2></div>
+      <div className='title1'><h2>Top selling products</h2></div>
       <ProductSlider products={products} count={count} handleLeft={handleLeft} handleRight={handleRight} addToCart={addToCart} />
 
 

@@ -174,31 +174,42 @@ nav {
 
 .NewSlider .NewProduct {
   width: 300px;
-  height: 351px;
+  height: 390px;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
   margin-right: 31px;
+  margin-bottom: 30px;
   padding: 20px;
   transition: 0.5s;
 }
 
 .NewSlider .NewProduct img {
-  width: 250px;
-  height: 250px;
+  width: 230px;
+  height: 230px;
   object-fit: cover;
   border-radius: 10px 10px 0 0;
 }
 
 .NewSlider .NewProduct .ProductInfo {
-  padding: 20px 30px;
+  padding: 35px 30px;
   display: flex;
   flex-wrap: wrap;
   font-family: sans-serif;
   justify-content: space-between;
 }
 
-.NewSlider .NewProduct .ProductInfo button {
-  margin: 20px 0;
+.NewSlider .NewProduct .ProductInfo .ProductTitle{
+  margin: 2px;
+  padding: 2px;
+}
+
+.NewSlider .NewProduct .ProductInfo .ProductPrice {
+  margin: 2px;
+  padding: 2px;
+}
+
+.NewSlider .NewProduct .ProductInfo .addcart {
+  margin: 12px 0;
   width: 100%;
   background-color: rgb(214, 207, 207);
   border: none;
@@ -208,6 +219,16 @@ nav {
   border-radius: 11px;
 }
 
+.buybutton{
+  margin: 12px 0;
+  width: 100%;
+  background-color: rgb(214, 207, 207);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 7px 10px;
+  border-radius: 11px;
+}
 
 .NewSlider .Arrow {
   width: 100%;
@@ -226,7 +247,7 @@ nav {
   margin: 0 20px;
   cursor: pointer;
 }
-
+ 
 .features {
   display: flex;
   align-items: center;
@@ -514,32 +535,6 @@ footer {
 .copyright {
   font-weight: 300;
   font-size: 14px;
-}
-
-.cartCard {
-  display: flex;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  padding: 10px;
-}
-
-.cartItemImage {
-  width: 163px;
-  height: auto;
-  margin-right: 10px;
-}
-
-.cartItemDetails {
-  flex: 1;
-}
-
-.buyButton {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
 }
 
 @media screen and (max-width:480px) {
