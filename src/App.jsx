@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import './App.css';
 import Home from './Home';
 import Cart from './Cart';
+import Payment from './Payment'; // Import the payment component
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
-  const [count, setCount] = useState(0);
 
   const addToCart = (product) => {
     const existingProductIndex = cartItems.findIndex((item) => item.id === product.id);
@@ -38,14 +38,6 @@ function App() {
     setCartItems(updatedCartItems);
   };
 
-  const handleLeft = () => {
-    setCount((prevCount) => (prevCount > 0 ? prevCount - 1 : prevCount));
-  };
-
-  const handleRight = () => {
-    setCount((prevCount) => (prevCount < products.length / 3 - 1 ? prevCount + 1 : prevCount));
-  };
-
   const products = [
     { id: 1, imgSrc: './images/blazer.png', title: 'blazer', color: 'White', price: 5000 },
     { id: 2, imgSrc: './images/blazer2.png', title: 'blazer2', color: 'White', price: 5000 },
@@ -62,7 +54,7 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Home products={products} count={count} handleLeft={handleLeft} handleRight={handleRight} addToCart={addToCart} />}
+          element={<Home products={products} addToCart={addToCart} />}
         />
         <Route
           path="/cart"
@@ -74,6 +66,10 @@ function App() {
               removeFromCart={removeFromCart}
             />
           }
+        />
+        <Route
+          path="/payment"
+          element={<Payment />} // Add the payment route
         />
       </Routes>
     </>
