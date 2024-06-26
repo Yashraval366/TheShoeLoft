@@ -17,7 +17,7 @@ nav {
   box-shadow: 0 10px 5px rgba(0, 0, 0, 6);
 }
 
-#logo{
+#logo {
   width: 262px;
   margin-left: -72px;
   cursor: pointer;
@@ -49,6 +49,7 @@ nav {
 }
 
 .Cartbtn {
+
   margin: 4px;
   padding: 7px;
   border-radius: 55px;
@@ -58,8 +59,12 @@ nav {
   list-style: none;
   background-color: whitesmoke;
   color: black;
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.6);
+
+
 }
+
+
+
 
 
 .limitedOffer {
@@ -83,7 +88,7 @@ nav {
   margin: 5px 28px;
 }
 
-.bgimage{
+.bgimage {
   background: url("https://images.unsplash.com/photo-1604147495798-57beb5d6af73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80");
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
   overflow: hidden;
@@ -134,7 +139,7 @@ nav {
   right: 10%;
   font-size: 30px;
   font-weight: 900;
-  color: white;
+  color: green;
   border: 1px solid gray;
   background-color: black;
   z-index: 1;
@@ -153,7 +158,8 @@ nav {
 .sliderItem:nth-child(1) .sliderPrice {
   color: #369e62;
 }
-.title1{
+
+.title1 {
   font-size: 24px;
   font-family: sans-serif;
   margin-left: 40px;
@@ -198,7 +204,7 @@ nav {
   justify-content: space-between;
 }
 
-.NewSlider .NewProduct .ProductInfo .ProductTitle{
+.NewSlider .NewProduct .ProductInfo .ProductTitle {
   margin: 2px;
   padding: 2px;
 }
@@ -211,23 +217,46 @@ nav {
 .NewSlider .NewProduct .ProductInfo .addcart {
   margin: 12px 0;
   width: 100%;
-  background-color: rgb(214, 207, 207);
+  background-color: rgb(47, 214, 61);
   border: none;
   outline: none;
   cursor: pointer;
   padding: 7px 10px;
   border-radius: 11px;
+
 }
 
-.buybutton{
+.addcart:hover {
+  box-shadow: rgb(91, 90, 90) 5px 5PX;
+}
+
+.addcart:hover {
+  background-color: #3e8e41
+}
+
+.addcart:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+
+.buybutton {
   margin: 12px 0;
   width: 100%;
-  background-color: rgb(214, 207, 207);
+  background-color: rgb(62, 147, 244);
   border: none;
   outline: none;
   cursor: pointer;
   padding: 7px 10px;
   border-radius: 11px;
+  color: whitesmoke;
+
+}
+
+.buybutton:hover {
+  box-shadow: rgb(91, 90, 90) 5px 5PX;
 }
 
 .NewSlider .Arrow {
@@ -247,7 +276,7 @@ nav {
   margin: 0 20px;
   cursor: pointer;
 }
- 
+
 .features {
   display: flex;
   align-items: center;

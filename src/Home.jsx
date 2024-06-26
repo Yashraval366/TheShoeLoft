@@ -3,7 +3,6 @@ import { BsCart3 } from 'react-icons/bs';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
-
 function ProductSlider({ products, count, handleLeft, handleRight, addToCart }) {
   const itemsPerScreen = 3;
 
@@ -20,7 +19,7 @@ function ProductSlider({ products, count, handleLeft, handleRight, addToCart }) 
               <div className='ProductTitle'>{product.title}</div>
               <div className='ProductPrice'>{product.price}</div>
               <button className='buybutton'>Buy</button>
-              <button  className='addcart' onClick={() => addToCart(product)}>Add to Cart</button>
+              <button className='addcart' onClick={() => addToCart(product)}>Add to Cart</button>
             </div>
           </div>
         ))}
@@ -58,7 +57,7 @@ function Home({ products, count, handleLeft, handleRight, addToCart }) {
                 <img src="./images/search.png" width="20" height="20" alt="Search" className="searchIcon" />
               </div>
             </div>
-             <Link to="/cart" className='Cartbtn'><BsCart3 size='25px' /></Link>
+            <Link to="/cart" className='Cartbtn'><BsCart3 size='25px' /></Link>
           </div>
         </nav>
 
@@ -81,7 +80,6 @@ function Home({ products, count, handleLeft, handleRight, addToCart }) {
 
       <div className='title1'><h2>Top selling products</h2></div>
       <ProductSlider products={products} count={count} handleLeft={handleLeft} handleRight={handleRight} addToCart={addToCart} />
-
 
       <div className="features">
         <div className="feature">
@@ -235,3 +233,5 @@ function Home({ products, count, handleLeft, handleRight, addToCart }) {
 }
 
 export default Home;
+
+
