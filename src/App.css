@@ -252,8 +252,9 @@ nav {
   cursor: pointer;
   padding: 7px 10px;
   border-radius: 11px;
-  color: whitesmoke;
+  color: black;
   text-align: center;
+  text-decoration: none;
 
 
 }
