@@ -1,0 +1,63 @@
+.payment-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.payTitle {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.payInput {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.cardIcons {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.cardIcon {
+    width: 40px;
+    height: 40px;
+}
+
+.cardInfo {
+    display: flex;
+    gap: 10px;
+}
+
+.sm {
+    width: 30%;
+}
+
+.payButton {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.payButton:hover {
+    background-color: #218838;
+}
+
+.close {
+    display: block;
+    text-align: right;
+    cursor: pointer;
+    color: #888;
+}

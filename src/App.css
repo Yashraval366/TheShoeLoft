@@ -144,6 +144,7 @@ nav {
   background-color: black;
   z-index: 1;
   cursor: pointer;
+  justify-content: center;
 }
 
 .buyButton:hover {
@@ -252,6 +253,8 @@ nav {
   padding: 7px 10px;
   border-radius: 11px;
   color: whitesmoke;
+  text-align: center;
+
 
 }
 

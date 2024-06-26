@@ -18,7 +18,7 @@ function ProductSlider({ products, count, handleLeft, handleRight, addToCart }) 
             <div className='ProductInfo'>
               <div className='ProductTitle'>{product.title}</div>
               <div className='ProductPrice'>{product.price}</div>
-              <button className='buybutton'>Buy</button>
+              <Link to="/payment" className='buybutton'>Buy</Link>
               <button className='addcart' onClick={() => addToCart(product)}>Add to Cart</button>
             </div>
           </div>
@@ -66,10 +66,6 @@ function Home({ products, count, handleLeft, handleRight, addToCart }) {
             <div className="sliderItem">
               <img src="./images/air.png" alt="" className="sliderImg" />
               <div className="sliderBg"></div>
-              <h1 className="sliderTitle">AIR<br />FORCE<br />NEW SEASON</h1>
-              <a href="#product">
-                <button className="buyButton">BUY NOW!</button>
-              </a>
             </div>
           </div>
         </div>
@@ -232,6 +228,4 @@ function Home({ products, count, handleLeft, handleRight, addToCart }) {
   );
 }
 
-export default Home;
-
-
+export default Home; 

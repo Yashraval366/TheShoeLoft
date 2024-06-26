@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Home from './Home';
 import Cart from './Cart';
+import Payment from './Payment'; // Import Payment component
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -67,8 +68,13 @@ function App() {
         path="/cart"
         element={<Cart cartItems={cartItems} incrementQuantity={incrementQuantity} decrementQuantity={decrementQuantity} removeFromCart={removeFromCart} />}
       />
+      <Route
+        path="/payment"
+        element={<Payment />}
+      />
     </Routes>
   );
 }
 
 export default App;
+
